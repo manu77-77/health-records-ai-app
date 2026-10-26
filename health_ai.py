@@ -10,7 +10,6 @@ def generate_health_remarks(glucose, haemoglobin, cholesterol):
     from the three supplied blood-test values.
     """
 
-    # Read the API key from Streamlit secrets or environment
     api_key = st.secrets.get(
         "GEMINI_API_KEY",
         os.getenv("GEMINI_API_KEY", "")
@@ -22,10 +21,8 @@ def generate_health_remarks(glucose, haemoglobin, cholesterol):
             "Please review the test results with a healthcare professional."
         )
 
-    # Create the Gemini API client
     client = genai.Client(api_key=api_key)
 
-    # Ask the AI to comment cautiously on the values
     prompt = f"""
     You are generating educational remarks for a software assessment.
 
