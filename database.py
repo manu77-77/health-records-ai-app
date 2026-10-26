@@ -1,11 +1,8 @@
 
 import sqlite3
 
-# Name of the database file
 DATABASE_NAME = "health_records.db"
 
-
-# Create the database table if it does not exist
 def initialize_database():
 
     connection = sqlite3.connect(DATABASE_NAME)
@@ -27,7 +24,6 @@ def initialize_database():
     connection.close()
 
 
-# Save one patient record
 def add_patient(
     name, dob, email,
     glucose, haemoglobin, cholesterol,
@@ -49,7 +45,6 @@ def add_patient(
     connection.commit()
     connection.close()
 
-# Get all saved patient records
 def get_patients():
 
     connection = sqlite3.connect(DATABASE_NAME)
@@ -66,7 +61,6 @@ def get_patients():
 
     return patients
 
-# Update the email address of one patient
 def update_patient_email(patient_id, new_email):
 
     connection = sqlite3.connect(DATABASE_NAME)
@@ -80,7 +74,6 @@ def update_patient_email(patient_id, new_email):
     connection.close()
 
 
-# Delete one patient record
 def delete_patient(patient_id):
 
     connection = sqlite3.connect(DATABASE_NAME)
