@@ -110,7 +110,6 @@ if submitted:
 
 
 
-# READ: Display saved records
 st.header("Saved Patient Records")
 
 patients = get_patients()
@@ -118,7 +117,6 @@ patients = get_patients()
 if patients:
     st.dataframe(patients, use_container_width=True)
 
-    # UPDATE: Change a patient's email
     st.header("Update Patient Email")
 
     selected_id = st.selectbox(
@@ -155,7 +153,6 @@ if patients:
             st.success("Email updated successfully!")
             st.rerun()
 
-    # DELETE: Remove one selected patient
     st.header("Delete Patient")
 
     delete_id = st.selectbox(
